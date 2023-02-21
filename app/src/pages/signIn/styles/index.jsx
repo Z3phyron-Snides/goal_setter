@@ -11,10 +11,12 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
   padding: 5%;
+  color: ${({ theme }) => theme.text};
 `;
 export const Wrapper = styled.div`
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme.background};
+  border: 1px solid ${({ theme }) => theme.border};
   border-radius: 10px;
   width: 50%;
   @media screen and (max-width: 768px) {
@@ -56,7 +58,7 @@ export const InputContainer = styled.div`
 
 export const InputLabel = styled.label`
   margin-bottom: 5px;
- 
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Input = styled.input`
@@ -64,7 +66,10 @@ export const Input = styled.input`
   outline: none;
   border-radius: 8px;
   border: none;
-  background-color: #fff;
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: 0.25rem;
+  background: ${({ theme }) => theme.cards};
+  color: ${({ theme }) => theme.text};
   width: 100%;
 `;
 
@@ -78,13 +83,18 @@ export const Error = styled(ErrorMessage)`
 
 export const Button = styled(motion.button)`
   padding: 10px 20px;
-  background-color: #0077ff;
-  color: #fff;
+  color: ${({ theme }) => theme.button.text};
+  background-color: ${({ theme }) => theme.button.background};
   border-radius: 8px;
   border: none;
   outline: none;
   margin-top: 20px;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.button.hover.text};
+    background-color: ${({ theme }) => theme.button.hover.background};
+  }
 `;
 
 export const LinkButton = styled(motion.small)`
@@ -92,4 +102,5 @@ export const LinkButton = styled(motion.small)`
   margin-right: auto;
   margin-top: 10px;
   cursor: pointer;
+  color: ${({ theme }) => theme.content};
 `;
